@@ -2,10 +2,9 @@
 
 function App() {
   return (
-    <div>
-   Product Registration
-   </div>
-  
+    <div >
+     Product Registration
+    </div>
   );
 }
 

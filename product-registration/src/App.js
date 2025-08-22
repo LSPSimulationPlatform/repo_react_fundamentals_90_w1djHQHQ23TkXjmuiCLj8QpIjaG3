@@ -3,9 +3,8 @@
 function App() {
   return (
     <div>
-   Product Registration
-   </div>
-  
+      Product Registration
+    </div>
   );
 }
 

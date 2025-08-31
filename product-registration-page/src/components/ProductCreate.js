@@ -65,7 +65,7 @@ function ProductCreate({ onAddProduct, onNavigate}) {
 
   // The JSX returned by the component - the form UI
   return (
-    <div
+    <><div
       style={{
         backgroundColor: "#f4f4f4", // Light gray background for the form container
         width: 600, // Fixed width
@@ -76,99 +76,98 @@ function ProductCreate({ onAddProduct, onNavigate}) {
       }}
     >
       {/* Title of the page */}
-      <h1 style={{ color: "blue" }}>Product Create Page</h1>
+    <h1 style={{ color: "blue" }}>Product Create Page</h1>
+        {/* Label for product name input */}
+        <label>Product Name</label>
+        <br />
+        {/* Input field bound to productName state */}
+        <input
+          type="text"
+          value={productName} // Controlled input value
+          onChange={(e) => setProductName(e.target.value)} // Update state on user input
+          placeholder="Product Name"
+          style={{ width: "100%", padding: 8, marginBottom: 15 }} // Styling
+        />
+        <br />
 
-      {/* Label for product name input */}
-      <label>Product Name</label>
-      <br />
-      {/* Input field bound to productName state */}
-      <input
-        type="text"
-        value={productName} // Controlled input value
-        onChange={(e) => setProductName(e.target.value)} // Update state on user input
-        placeholder="Product Name"
-        style={{ width: "100%", padding: 8, marginBottom: 15 }} // Styling
-      />
-      <br />
+        {/* Label for product code input */}
+        <label>Product Code</label>
+        <br />
+        {/* Input field bound to productCode state */}
+        <input
+          type="text"
+          value={productCode} // Controlled input value
+          onChange={(e) => setProductCode(e.target.value)} // Update state on user input
+          placeholder="Product Code"
+          style={{ width: "100%", padding: 8, marginBottom: 15 }} // Styling
+        />
+        <br />
 
-      {/* Label for product code input */}
-      <label>Product Code</label>
-      <br />
-      {/* Input field bound to productCode state */}
-      <input
-        type="text"
-        value={productCode} // Controlled input value
-        onChange={(e) => setProductCode(e.target.value)} // Update state on user input
-        placeholder="Product Code"
-        style={{ width: "100%", padding: 8, marginBottom: 15 }} // Styling
-      />
-      <br />
+        {/* Label for release date input */}
+        <label>Release Date</label>
+        <br />
+        {/* Date input bound to releaseDate state */}
+        <input
+          type="date"
+          value={releaseDate} // Controlled input value
+          onChange={(e) => setReleaseDate(e.target.value)} // Update state on user input
+          style={{ width: "100%", padding: 8, marginBottom: 15 }} // Styling
+        />
+        <br />
 
-      {/* Label for release date input */}
-      <label>Release Date</label>
-      <br />
-      {/* Date input bound to releaseDate state */}
-      <input
-        type="date"
-        value={releaseDate} // Controlled input value
-        onChange={(e) => setReleaseDate(e.target.value)} // Update state on user input
-        style={{ width: "100%", padding: 8, marginBottom: 15 }} // Styling
-      />
-      <br />
+        {/* Label for category selection */}
+        <label>Product Category</label>
+        <br />
+        {/* Select dropdown bound to productCategory state */}
+        <select
+          value={productCategory} // Controlled select value
+          onChange={(e) => setProductCategory(e.target.value)} // Update state on change
+          style={{ width: "100%", padding: 8, marginBottom: 15 }} // Styling
+        >
+          {/* Options for category */}
+          <option>Electronics</option>
+          <option>Clothing</option>
+          <option>Books</option>
+          <option>Home & Kitchen</option>
+          <option>Toys & Games</option>
+          <option>Health & Beauty</option>
+        </select>
+        <br />
 
-      {/* Label for category selection */}
-      <label>Product Category</label>
-      <br />
-      {/* Select dropdown bound to productCategory state */}
-      <select
-        value={productCategory} // Controlled select value
-        onChange={(e) => setProductCategory(e.target.value)} // Update state on change
-        style={{ width: "100%", padding: 8, marginBottom: 15 }} // Styling
-      >
-        {/* Options for category */}
-        <option>Electronics</option>
-        <option>Clothing</option>
-        <option>Books</option>
-        <option>Home & Kitchen</option>
-        <option>Toys & Games</option>
-        <option>Health & Beauty</option>
-      </select>
-      <br />
+        {/* Label for product description */}
+        <label>Product Description</label>
+        <br />
+        {/* Textarea bound to productDescription state */}
+        <textarea
+          value={productDescription} // Controlled textarea value
+          onChange={(e) => setProductDescription(e.target.value)} // Update state on user input
+          placeholder="Product Description"
+          rows={4} // Number of visible text lines
+          style={{ width: "100%", padding: 8, marginBottom: 20 }} // Styling
+        ></textarea>
+        <br />
 
-      {/* Label for product description */}
-      <label>Product Description</label>
-      <br />
-      {/* Textarea bound to productDescription state */}
-      <textarea
-        value={productDescription} // Controlled textarea value
-        onChange={(e) => setProductDescription(e.target.value)} // Update state on user input
-        placeholder="Product Description"
-        rows={4} // Number of visible text lines
-        style={{ width: "100%", padding: 8, marginBottom: 20 }} // Styling
-      ></textarea>
-      <br />
+        {/* Save button triggers saveProduct function */}
+        <button
+          onClick={saveProduct} // On click event handler
+          style={{
+            backgroundColor: "blue",
+            color: "white",
+            padding: "10px 20px",
+            border: "none",
+            borderRadius: 5,
+            cursor: "pointer",
+            fontSize: 16,
+          }}
+        >
+          Save
+        </button>
 
-      {/* Save button triggers saveProduct function */}
-      <button
-        onClick={saveProduct} // On click event handler
-        style={{
-          backgroundColor: "blue",
-          color: "white",
-          padding: "10px 20px",
-          border: "none",
-          borderRadius: 5,
-          cursor: "pointer",
-          fontSize: 16,
-        }}
-      >
-        Save
-      </button>
-
-      {/* Back button triggers navigation back to Main Page */}
-      <button onClick={() => onNavigate("main")} style={backButtonStyle} >
-        Back to Main Page
-      </button>
-    </div>
+        {/* Back button triggers navigation back to Main Page */}
+        <button onClick={() => onNavigate("main")} style={backButtonStyle}>
+          Back to Main Page
+        </button>
+      </div></>
   );
 }
 

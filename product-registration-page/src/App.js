@@ -73,5 +73,5 @@ function App() {
   return <div>{pageContent}</div>;
 }
 
-// Export App component to be used elsewhere (e.g., index.js)
+// Export App component                 vvvvv to be used elsewhere (e.g., index.js)
 export default App;
